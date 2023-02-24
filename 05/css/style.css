@@ -1,0 +1,73 @@
+/* toto je komentar */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    color: #000;
+    background-color: #fff2d9;
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*font-style: italic; 
+    font-weight: bold;*/
+    margin: 10px;
+}
+
+li  { list-style-type: none; }
+
+/* csska pro obecny layout */
+.group      { 
+    padding: 10px;
+    border: 1px solid #a0a0a0;
+    background-color: gainsboro;
+}
+
+#page       {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#content            { display: flex; flex-wrap: nowrap; gap: 0 10px; }
+#content nav        { width: 200px; box-sizing: border-box; }
+#content article    { flex:1; }       
+
+@media screen and (max-width:400px) {
+    #content        { flex-direction: column; gap: 10px 0; }
+    #content nav    { width: 100%; order: 1; } 
+}
+
+
+/* csska pro homepage */
+
+/* header*/
+#homepage header            { height: 500px;}
+#homepage header h1         { font-size: 200%; color: darkred;}
+#homepage header img        { 
+    position: sticky;
+    top: 0;
+}
+
+/* article */
+
+#homepage #content article p::first-letter  { font-size: 300%; background-color: violet; }
+#homepage #content article p strong         { display:inline; height: 200px; width: 100px;  }
+#homepage #content article p img         { float:left;  }
+#homepage #content article p:last-of-type    { clear: both;  }
+
+/* footer */
+#homepage footer div.box ul li a:link, 
+ #homepage footer div.box ul li a:visited,
+ #homepage footer div.box ul li a:active     { color:greenyellow; font-weight: bold;}
+
+#homepage footer div.box ul li a:hover       { color: #ec0000; }
+
+
+/* csska pro detail */
+
+
+
+
+
+/* csska pro vypis */

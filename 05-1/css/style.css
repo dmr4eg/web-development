@@ -1,0 +1,61 @@
+/* reset */
+*                   { margin: 0; padding: 0; }
+h1, h2, h3, h4      { font-size: 12px;}
+
+body {
+    color: #484848;
+    background-color: #ffe4c4;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    margin: 10px;
+}
+
+li  { list-style-type: none;}
+
+/* main layout */
+#page                       { display: flex; flex-direction: column; gap: 10px 0;}
+#content                    { display: flex; gap: 0 10px; }
+#content nav                { width: 200px; box-sizing: border-box; }
+#content article            { flex:1; }
+
+@media screen and (max-width:400px) {
+   #content                 { flex-direction: column; gap: 10px 0; }
+   #content nav             { width: 100%; order:1; }
+}
+
+/* header */
+header                      { position: relative; height: 500px;}
+header h1                   { font-size: 100%; color: teal; font-weight: bold; }
+header img                  { width: 50px; position: sticky; top:0; left:10px; }
+
+/* footer */
+footer .box ul a:link,
+ footer .box ul a:visited,
+ footer .box ul a:active     { color: crimson; }
+footer .box ul a:hover       { color: yellowgreen; }
+
+.group                       { border: 1px solid #a0a0a0; background-color: aliceblue; padding: 10px; }
+
+/* END main layout */
+
+/* detail */
+#detail header h1                        { font-size: 200%; }
+
+#detail #content nav                      { }
+
+#detail #content article h2               { font-size: 150%; color: royalblue; }
+#detail #content article p::first-letter  { background-color: tomato; font-size: 300%; font-style: italic; }
+
+#detail #content article p strong          { display:inline; padding: 2px; width:200px; }
+
+#detail #content article p img              { float: right; }
+
+#detail #content article p:last-of-type     {clear: both;}
+
+/* homepage */
+
+
+/* login */
+
+
+/* vypis */

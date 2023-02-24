@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="validace.js"></script>
+    <style>
+        .error  {
+            color: red;
+        }
+
+        .error::after {
+            content: ' Chybne vyplneno';
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Registrace</legend>
+
+            <div class="row">
+                <label for="jmeno">
+                    Jmeno
+                </label>
+                <input type="text" name="name" id="jmeno">
+            </div>
+            <div class="row">
+                <label for="prijmeni">
+                    Prijmeni
+                </label>
+                <input type="text" name="surname" id="prijmeni">
+            </div>
+            <div class="row">
+                <label for="heslo">
+                    Heslo
+                </label>
+                <input type="password" name="password" id="heslo">
+            </div>
+            <div class="row">
+                <label for="hesloznovu">
+                    Heslo znovu
+                </label>
+                <input type="password" name="passwordagain" id="hesloznovu">
+            </div>
+            <div class="row">
+                <input type="submit" value="Registrovat">
+            </div>
+        </fieldset>
+    </form>
+    <script>
+        init();
+    </script>
+</body>
+</html>
+
+
+
+
+
+<!-- za uzaviraci znackou </form> ve znacce <script> spustte funkci init()
+
+    v souboru validace.js
+    nadefnujte funkci init
+    ziskejte referenci (querySelector) na vas formular a ulozte ji do promene const formElement
+    v te provedte za pomoci fce addEventLisneter, naveseni posluchace (fce validate) na udalost submit vaseho fomulare
+    nadefinujte funkci validate
+    ziskejte reference na jednotlive inputy a ulozte je do promenych
+    provedte validaci jmena minimalni delka 5 znaku
+    provedte validaci hesla minimalni delka 8 znaku a musi byt shodna v obou polickach
+    pokud je vse OK nechte formular odeslat na server
+    pokud je neco SPATNE za pomoci metody preventDefault() zabrante odeslani formulare
+    pokud je neco SPATNE dejte uzivateli vedet, bud hlaskou pomoci metody alert ci pomoci DOM metod primo u policek
+    Oba soubory vystavte na serveru wa.toad.cz ve sve slozce www v adresari 06 -->

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+</head>
+<body>
+    <form action="" method="post">
+        <fieldset>
+            <legend>Registrace</legend>
+            <label for="username">Uzivatelske jmeno:</label>
+            <input type="text" name="username" id="username">
+            <input type="submit" value="Registruj se!">
+        </fieldset>
+    </form>
+
+    <script>
+        var inputEL = document.querySelector('#username');
+        inputEL.addEventListener('keyup', sendRequestDebounce);
+
+        var timer = null;
+        function sendRequestDebounce(e) {
+            if (timer != null) {
+                clearTimeout(timer);
+                timer = null;
+            }
+            timer = setTimeout(function() {sendRequest(e)}, 300);
+        }
+
+	function sendRequest(e) {
+            timer = null;
+            console.log(e);
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://wa.toad.cz/passwords.txt');
+            xhr.addEventListener('load', succes);
+            xhr.addEventListener('error', error);
+            xhr.send('username=' + encodeURIComponent(inputEL.value));
+        }
+
+        function succes(e) {
+            console.log(e.target.response.split('\n'))
+            if (e.target.response.split('\n').indexOf(inputEL.value) != -1) {
+                console.log('Username je pouzit');
+            }
+        }
+        function error(e) {
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script>
+        (function(global){
+            var a = 1;
+
+            if (true) {
+                var b = 2;
+            }
+
+            function secti() {
+                var c = 3;
+            }
+
+            global.secti = secti;
+
+        })(window);
+
+        secti();
+    </script> -->
+</body>
+</html>

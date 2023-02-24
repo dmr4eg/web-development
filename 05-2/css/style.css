@@ -1,0 +1,66 @@
+/* reset */
+*                     { padding: 0; margin: 0; }
+h1, h2, h3, h4        { font-size: 12px; font-weight: normal; }
+li                    { list-style-type: none; }
+
+/* main layout */
+body {
+    color: #484848;
+    background-color:cornsilk;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    margin: 10px;
+}
+.group {
+    padding: 10px;          
+    border: 1px solid #a0a0a0;  
+    background-color:azure;
+}
+
+#page   {
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+}
+
+#content                    { display: flex; gap: 0 10px; }
+#content nav                { width: 200px; box-sizing: border-box; }
+#content article            { flex:1; }
+
+@media screen and (max-width:400px) {
+    #content                { flex-direction: column; gap: 10px 0;}
+    #content nav            { width: 100%; order: 1; }
+}
+
+/* header */
+header                        { position: static; height: 500px; }
+header h1                     { font-size:200%; color: tomato; font-weight: bold; }
+header img                    { width: 50px; position:sticky; top:0; left:50px; }
+
+/* footer */
+footer .box ul a:link,        
+ footer .box ul a:visited,
+ footer .box ul a:active      { color: violet; font-weight: bolder; }
+footer .box ul a:hover        { color: slateblue; }
+footer .box#other ul a:hover  { color: yellowgreen; }
+
+/* END main layout */
+
+
+
+/* detail */
+/* header */
+#detail header h1               { font-size: 200%; }
+
+/* clanek */
+#detail #content article p::first-letter    { font-size: 300%; background-color: seagreen; }
+#detail #content article p strong           { display:inline; width:100px; height: 100px; padding: 20px; }
+#detail #content article p img              { float: right; }
+#detail #content article p:last-of-type     { clear: both; }
+/* homepage */
+
+
+/* login */
+
+
+/* vypis */
